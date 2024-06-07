@@ -1,0 +1,63 @@
+/* h1 {
+    color: blue;
+}
+
+h2 {
+    color: white;
+    background-color: blue;
+}
+
+span {
+    font-size: 2em;
+    /* color:black; */
+/* }  */
+
+/* selector 02
+#special {
+    background-color: yellow;
+}
+
+.alert {
+    /* padding: 1px; */
+    /* padding-block:; */
+    /* border: 1px solid grey; */
+    /* border-color: gray; */
+/* }
+
+.alert.stop{
+    background-color: red;
+}
+
+.alert.go{
+    background-color: green ;
+} */ 
+
+p:first-child{
+    /* color: red; */
+    font-size: 150%;
+}
+
+p:first-child:first-line {
+ 
+    color:red;
+}
+
+a:link{
+    color: orange;
+}
+a:visited {
+    color:green;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #333;
+    color:white;
+  }

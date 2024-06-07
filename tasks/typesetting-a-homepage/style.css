@@ -1,0 +1,210 @@
+/* General setup */
+
+@font-face {
+  font-family: 'aleoregular';
+  src: url('fonts/aleo-regular-webfont.woff2') format('woff2'),
+       url('fonts/aleo-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'aleobold';
+  src: url('fonts/aleo-bold-webfont.woff2') format('woff2'),
+       url('fonts/aleo-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'alluraregular';
+  src: url('fonts/allura-regular-webfont.woff2') format('woff2'),
+       url('fonts/allura-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'grand_hotelregular';
+  src: url('fonts/grandhotel-regular-webfont.woff2') format('woff2'),
+       url('fonts/grandhotel-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+html{
+  font-size: 10 px;
+}
+
+* {
+    box-sizing: border-box;  
+  }
+  
+  body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+  }
+  
+  /* Layout */
+  
+  section {
+    float: left;
+    width: 50%;
+  }
+  
+  aside {
+    float: left;
+    width: 30%;
+  }
+  
+  nav {
+    float: left;
+    width: 20%;
+  }
+  
+  footer {
+    clear: both;
+  }
+  
+  header, section, aside, nav, footer {
+    padding: 20px;
+  }
+  
+  /* header and footer */
+  
+  header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+  }
+  
+  /* WRITE YOUR CODE BELOW HERE */
+  h1,h2{
+    font-family: 'aleobold';
+    letter-spacing: 1px;
+  }
+
+  h1{
+    font-size: 2.0rem;
+    text-align: center;    
+  }
+
+  p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem ;
+    line-height: 20px;
+    /* color: red; */
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+  }
+
+  section p {
+    text-indent: 20px;
+  }
+
+  /* a{
+    color: #a66;
+  }
+  a:hover,:focus{
+    text-decoration-line: none;
+  } */
+
+  a {
+    outline-color: transparent;
+    /* background-image: url(external-link-52.png); */
+  }
+  
+  a:link {
+    color: #a66;
+  }
+  
+  a:visited {
+    color: rgb(117, 70, 70);
+  }
+  
+  a:focus {
+    text-decoration: none;
+    background: #bae498;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    background: #cdfeaa;
+  }
+  
+  a:active {
+    background: #6900ff;
+    color: #cdfeaa;
+  }
+
+  ul,ol,dl
+ {
+  font-size: 1.2rem;
+}
+
+ul li {
+  padding-left: 2rem;
+  /* background-image: url(external-link-52.png); */
+  background-position: 0 0;
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+}
+
+a[href^="http"] {
+  background: url("external-link-52.png") no-repeat 100% 0;
+  background-size: 20px 20px;
+  padding-right: 30px;
+}
+
+nav {
+  display: flex;
+  gap: 0.625%;
+}
+
+nav ul{
+  list-style-type: none;
+  /* background-color: #a66; */
+}
+
+nav ul li{
+  /* background-color: #f1a752; */
+  border-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #a66;
+  
+}
+
+
+nav a {
+  flex: 1;
+  text-decoration:solid black;
+  outline-color: transparent;
+  text-align: center;
+  line-height: 3;
+  color: #a66;
+}
+
+nav a:link,
+nav a:visited,
+nav a:focus {
+  /* background: palegoldenrod; */
+  color: #a66;
+}
+
+nav a:hover {
+  background: rgb(234, 224, 204);
+}
+
+nav a:active {
+  background: darkred;
+  color: white;
+}
+
