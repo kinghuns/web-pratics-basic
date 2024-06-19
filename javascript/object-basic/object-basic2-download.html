@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <title>Object basics: Task 2</title>
+  <style>
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+<section class="preview" >
+
+
+
+</section>
+
+</body>
+<script>
+  let bandInfo;
+
+  // Add your code here
+
+  const band = {
+    name: 'TUMI',
+    nationality: 'US',
+    genre: 'Bag',
+    members: 12000000,
+    formed: 1974,
+    split: 2021,
+    albums: [
+      {name: 'Alpha',released: 1975},
+      {name: 'Beta',released: 1979},
+    ]
+  };
+
+  bandInfo = `The ${band.nationality} ${band.genre} band ${band.name}
+  were active ${band.formed}-${band.split}.
+              There first album, ${band.albums[0].name},
+              was released in ${band.albums[0].released}.`;
+
+  // Don't edit the code below here!
+
+  const section = document.querySelector('section');
+  let para1 = document.createElement('p');
+  para1.textContent = bandInfo;
+  // para1.style.white-Space =
+  section.appendChild(para1);
+</script>
+
+</html>

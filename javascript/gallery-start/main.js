@@ -16,7 +16,7 @@ const alts = {
     'pic5.jpg': 'Large moth on a leaf'
 }
 /* Looping through images */
-for (const image in imageFiles){
+for (const image of imageFiles){
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `images/${image}`);
     newImage.setAttribute('alt', alts[image]);
@@ -38,6 +38,18 @@ for (const image in imageFiles){
     //     });
 }
 
-
-
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', e=>{
+    const btnClass = btn.getAttribute('class');
+    if (btnClass === 'dark')
+    {
+        btn.setAttribute('class','light');
+        btn.textContent = 'Lighten';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    } else
+    {
+        btn.setAttribute('class','dark');
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    }
+})
