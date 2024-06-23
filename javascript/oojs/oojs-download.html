@@ -32,7 +32,22 @@
     sides;
     sideLength;
 
+    constructor(name, sides, sideLength) {
+      this.name = name;
+      this.sideLength = sideLength;
+      this.sides = sides;
+    }
+
+    calcPerimeter() {
+      console.log(`The ${this.name}'s perimeter is: ` + this.sideLength * this.sides);
+    }
   }
+
+    const square = new Shape('square', 4 ,5 );
+    const triangle = new Shape('triangle',3, 3);
+
+    square.calcPerimeter();
+    triangle.calcPerimeter();
 
 </script>
 
