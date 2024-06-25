@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>JSON: Task 1</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css"/>
+</head>
+
+<body>
+
+<section class="preview">
+
+
+</section>
+
+</body>
+<script>
+  const section = document.querySelector('section');
+
+  let para1 = document.createElement('p');
+  let para2 = document.createElement('p');
+  let motherInfo = 'The mother cats are called ';
+  let kittenInfo;
+  const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+  fetch(requestURL)
+    .then(response => response.text())
+    // .then(text => console.log("fetch from sample.json " + text + " **end**"));
+    .then(text => displayCatInfo(text));
+
+  // fetchData(requestURL);
+  //
+  // async function fetchData(url) {
+  //   const responseRemote = await fetch(requestURL);
+  //   // const Cats = await responseRemote.json();
+  //   const responseText = responseRemote.text();
+  //
+  //   // console.log("Cats: " + Cats[1].name);
+  //   console.log(responseText);
+  // }
+
+
+  function displayCatInfo(catString) {
+    let total = 0;
+    let male = 0;
+
+    // Add your code here
+    console.log( "fetch from sample.json, use in displayCatInfo : " +  catString + "***end***");
+    const Cats = JSON.parse(catString);
+    // const header = document.querySelector("header");
+    // const myH1 = document.createElement("h1");
+    // myH1.textContent = obj.squadName;
+    // header.appendChild(myH1);
+    // const mothers = catInfo.members;
+    for (const mother of Cats) {
+      motherInfo = `Name: ${mother.name}`;
+      console.log(motherInfo);
+    }
+
+    // let i;
+    for(let j = 0; j < Cats.length; j++) {
+        console.log("j: " +Cats[j].name);
+    }
+    // let step;
+    // for (step = 0; step < 5; step++) {
+    //   // Runs 5 times, with values of step 0 through 4.
+    //   console.log("Walking east one step" + step.toString());
+    // }
+
+    // let index;
+    // const length = Cats.length;
+
+    for (let i = 0; i < Cats.length; i++) {
+      // Runs 5 times, with values of step 0 through 4.
+      console.log(Cats[i].name);
+    }
+
+    // Cats[0].name;
+    // motherInfo = catInfo[0].text;
+    // console.log(catInfo[0]);
+    // console.log(catInfo[0].text);
+    // kittenInfo = catInfo[0].kittens[0].text;
+
+    // Don't edit the code below here!
+
+    para1.textContent = motherInfo;
+    para2.textContent = kittenInfo;
+  }
+
+  section.appendChild(para1);
+  section.appendChild(para2);
+</script>
+
+</html>
