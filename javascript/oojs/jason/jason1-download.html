@@ -57,33 +57,39 @@
     // Add your code here
     console.log( "fetch from sample.json, use in displayCatInfo : " +  catString + "***end***");
     const Cats = JSON.parse(catString);
-    // const header = document.querySelector("header");
-    // const myH1 = document.createElement("h1");
-    // myH1.textContent = obj.squadName;
-    // header.appendChild(myH1);
-    // const mothers = catInfo.members;
-    for (const mother of Cats) {
-      motherInfo = `Name: ${mother.name}`;
-      console.log(motherInfo);
-    }
 
-    // let i;
-    for(let j = 0; j < Cats.length; j++) {
-        console.log("j: " +Cats[j].name);
+    for (const mother of Cats) {
+      motherInfo += `${mother.name}, `;
+      // console.log(motherInfo);
+      for(const kitten of mother.kittens) {
+        if (kitten.gender === 'm') {
+          male++;
+        }
+        console.log(mother.name + ": " +kitten.name);
+      }
+      total += mother.kittens.length;
     }
+    motherInfo = motherInfo.substring(0,motherInfo.length-2);
+    motherInfo += ".";
+    kittenInfo = `There are ${total} kittens, ${male} are male and ${total-male} are female.`
+
+    console.log(motherInfo);
+    console.log(kittenInfo);
+    // let i;
+    // for(let j = 0; j < Cats.length; j++) {
+    //     console.log("j: " +Cats[j].name);
+    // }
     // let step;
     // for (step = 0; step < 5; step++) {
     //   // Runs 5 times, with values of step 0 through 4.
     //   console.log("Walking east one step" + step.toString());
     // }
 
-    // let index;
-    // const length = Cats.length;
 
-    for (let i = 0; i < Cats.length; i++) {
-      // Runs 5 times, with values of step 0 through 4.
-      console.log(Cats[i].name);
-    }
+    // for (let i = 0; i < Cats.length; i++) {
+    //   // Runs 5 times, with values of step 0 through 4.
+    //   console.log(Cats[i].name);
+    // }
 
     // Cats[0].name;
     // motherInfo = catInfo[0].text;
