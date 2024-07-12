@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping list example</title>
+  <style>
+    li {
+      margin-bottom: 10px;
+    }
+
+    li button {
+      font-size: 12px;
+      margin-left: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<h1>My shopping list</h1>
+
+<div>
+  <label for="item">Enter a new item:</label>
+  <input type="text" name="item" id="item">
+  <button>Add item</button>
+</div>
+
+<ul>
+
+</ul>
+
+<script>
+  const paraUl = document.querySelector("ul");
+  const paraInput = document.querySelector("input");
+  const paraButton = document.querySelector("button");
+
+  function btnClick(){
+    const currentValue = paraInput.value;
+    paraInput.value = '';
+    const newElementListItem = document.createElement("li");
+    const newElementSpan = document.createElement("span");
+    const newElementBtn = document.createElement("button");
+
+    newElementSpan.textContent = currentValue;
+    newElementBtn.textContent = "Delete";
+
+    newElementListItem.appendChild(newElementSpan);
+    newElementListItem.appendChild(newElementBtn);
+
+    paraUl.appendChild(newElementListItem);
+
+    newElementBtn.addEventListener("click", () =>{
+      paraUl.removeChild(newElementListItem);
+    });
+    paraInput.focus();
+
+  }
+
+  paraButton.addEventListener("click", btnClick);
+
+</script>
+</body>
+</html>
