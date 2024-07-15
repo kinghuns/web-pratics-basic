@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <canvas class="myCanvas">
+      <p>Add suitable fallback here.</p>
+    </canvas>
+    <script>
+      const canvas = document.querySelector(".myCanvas");
+      const width = (canvas.width = window.innerWidth);
+      const height = (canvas.height = window.innerHeight);
+
+      const ctx = canvas.getContext("2d");
+      const image = new Image();
+      image.src = "firefox.png";
+      image.onload = function () {
+        // ctx.drawImage(image, 50, 50);
+        ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175);
+
+      };
+
+      ctx.translate(width / 2, height / 2);
+
+      function degToRad(degrees) {
+        return (degrees * Math.PI) / 180;
+      }
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      var length = 250;
+      var moveOffset = 20;
+
+      for (var i = 0; i < length; i++) {
+        ctx.fillStyle =
+                "rgba(" + (255 - length) + ", 0, " + (255 - length) + ", 0.9)";
+        ctx.beginPath();
+        ctx.moveTo(moveOffset, moveOffset);
+        ctx.lineTo(moveOffset + length, moveOffset);
+        var triHeight = (length / 2) * Math.tan(degToRad(60));
+        ctx.lineTo(moveOffset + length / 2, moveOffset + triHeight);
+        ctx.lineTo(moveOffset, moveOffset);
+        ctx.fill();
+
+        length--;
+        moveOffset += 0.7;
+        ctx.rotate(degToRad(5));
+      }
+
+      function loop() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+        ctx.fillRect(0, 0, width, height);
+
+        while (balls.length < 25) {
+          var ball = new Ball();
+          balls.push(ball);
+        }
+
+        for (i = 0; i < balls.length; i++) {
+          balls[i].draw();
+          balls[i].update();
+          balls[i].collisionDetect();
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+
+    </script>
+  </body>
+</html>

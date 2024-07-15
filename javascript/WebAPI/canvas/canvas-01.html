@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Client - Canvas</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+<body>
+<h1>Canvas test</h1>
+<canvas class = "myCanvas" id="canvas">
+  <p>your browsers do not support canvas</p>
+</canvas>
+
+<script>
+  const canvas = document.querySelector(".myCanvas");
+  const width = (canvas.width = window.innerWidth);
+  const height = (canvas.height = window.innerHeight);
+
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "rgb(0, 0, 0)";
+  ctx.fillRect(0, 0, width, height);
+  // // ctx.fillStyle = "rgb(255, 0, 0)";
+  // ctx.fillRect(50, 50, 100, 150);
+  // ctx.fillStyle = "rgb(0, 255, 0)";
+  // ctx.fillRect(75, 75, 100, 100);
+  // ctx.fillStyle = "rgba(255, 0, 255, 0.75)";
+  // ctx.fillRect(25, 100, 175, 50);
+  // ctx.strokeStyle = "rgb(255, 255, 255)";
+  // ctx.lineWidth = 5;
+  // ctx.strokeRect(25, 25, 175, 200);
+
+
+  // draw();
+  // draw02();
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 1;
+  ctx.font = "36px arial";
+  ctx.strokeText("Canvas text", 50, 50);
+
+  ctx.fillStyle = "red";
+  ctx.font = "48px georgia";
+  ctx.fillText("Canvas text", 50, 150);
+
+  function draw() {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+      let ctx = canvas.getContext("2d");
+
+      ctx.beginPath();
+      ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // 绘制
+      ctx.moveTo(110, 75);
+      ctx.arc(75, 75, 35, 0, Math.PI, false); // 口 (顺时针)
+      ctx.moveTo(65, 65);
+      ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // 左眼
+      ctx.moveTo(95, 65);
+      ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // 右眼
+      ctx.stroke();
+    }
+  }
+
+  function draw01() {
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+
+      // 二次贝塞尔曲线
+      ctx.beginPath();
+      ctx.moveTo(75, 25);
+      ctx.quadraticCurveTo(25, 25, 25, 62.5);
+      ctx.quadraticCurveTo(25, 100, 50, 100);
+      ctx.quadraticCurveTo(50, 120, 30, 125);
+      ctx.quadraticCurveTo(60, 120, 65, 100);
+      ctx.quadraticCurveTo(125, 100, 125, 62.5);
+      ctx.quadraticCurveTo(125, 25, 75, 25);
+      ctx.stroke();
+    }
+  }
+
+  function draw02() {
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+
+      //三次贝塞尔曲线
+      ctx.beginPath();
+      ctx.moveTo(75, 40);
+      ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+      ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+      ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+      ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+      ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+      ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+      ctx.fill();
+    }
+  }
+
+
+  function degToRad(degrees) {
+    return (degrees * Math.PI) / 180;
+  }
+
+
+
+
+</script>
+
+
+</body>
+</html>
