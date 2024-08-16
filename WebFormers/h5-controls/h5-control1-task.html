@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <title>HTML5 controls: Task 1</title>
+  <style>
+    body {
+      background-color: #fff;
+      color: #333;
+      font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+      padding: 1em;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+<form>
+  <h2>Edit your preferences</h2>
+  <ul>
+    <li>
+      <label for="e-mail">Email</label>
+      <input id="e-mail" type="email" name="e-mail" placeholder="please input email">
+    </li>
+    <li>
+      <label for="website">Website</label>
+      <input id="website" type="url" name="website" placeholder="please input url">
+
+    </li>
+    <li>
+      <label for="phone">Phone number</label>
+      <input id="phone" type="tel" name="phone" placeholder="please input phone number">
+
+    </li>
+    <li>
+      <label for="fave-color">Favorite color</label>
+      <input id="fave-color" type="color" name="fave-color">
+
+    </li>
+    <li>
+      <button>Update preferences</button>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <label for="max-invite">Select maximum number of invitations</label>
+      <input id="max-invite" type="range" name="max-invite" min="1" max="30" value="10" />
+      <output class = "invite-output" for="max-invite"></output>
+    </li>
+    <li>
+      <button>Submit</button>
+    </li>
+  </ul>
+</form>
+<script>
+  const invite = document.querySelector("#max-invite");
+  const output = document.querySelector(".invite-output");
+
+  output.textContent = invite.value;
+
+  invite.addEventListener("input", () => {
+    output.textContent = invite.value;
+  });
+</script>
+</body>
+
+</html>

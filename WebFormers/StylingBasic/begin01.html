@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <title>Styling basics: Task 1</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+   body {
+      background-color: #fff;
+      color: #333;
+      font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+      padding: 1em;
+      margin: 0;
+      width: 500px;
+    }
+
+    /*.form-area {*/
+    /*  position: relative;*/
+    /*  height: 100vh;*/
+    /*}*/
+
+    form {
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.5);
+      border-radius: 8px;
+      /*position: absolute;*/
+      /*text-align: center;*/
+      /*position: center;*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 740px;
+      height: 498px;
+      margin: 0 auto;
+      padding: 10px;
+      box-sizing: border-box;
+      /*background: #fff url(background.jpg);*/
+
+      /* we create our grid */
+      display: grid;
+      grid-gap: 20px;
+      /*grid-template-columns: repeat(2, 1fr);*/
+      grid-template-rows: 3em 10em 3em;
+    }
+
+    h2 {
+      font:
+        1.5em "sans-serif",
+        monospace;
+      align-self: center;
+      text-align: center;
+    }
+
+    /*ul {*/
+    /*  display: flex;*/
+    /*  !*grid-column: 1/4;*!*/
+    /*}*/
+    label {
+      font-family: "Titillium Web", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    button {
+      padding: 5px;
+      font: bold 0.8em sans-serif;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background: dodgerblue;
+      cursor: pointer;
+      color: white;
+      /*transform: rotate(-1.5deg);*/
+    }
+
+    button:after {
+      content: " >>>";
+    }
+
+    button:hover,
+    button:focus {
+      background: steelblue;
+      color: #fff;
+    }
+
+    input,select {
+      font:
+              1.0em "Titillium Web",
+              cursive,
+              sans-serif;
+      /*border: none;*/
+      padding: 0 10px;
+      margin: 0;
+      width: 80%;
+      background: none;
+    }
+
+    input:focus,
+    select:focus {
+      background: rgb(0 0 0 / 10%);
+      border-radius: 5px;
+    }
+
+    /*label {*/
+    /*  width: 30%;*/
+    /*  padding: 10px;*/
+    /*  margin: 10px;*/
+    /*  !*box-sizing: border-box;*!*/
+    /*}*/
+
+    li {
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: 1fr 2fr;
+      /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
+      /*grid-template-rows: 3em 10em 3em;*/
+    }
+    /*li {*/
+    /*  display: flex;*/
+    /*  justify-content: space-between;*/
+    /*}*/
+
+    /*input, select {*/
+    /*  width: 70%;*/
+    /*  margin-right: 10px;*/
+    /*}*/
+
+    .input-area {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .button-area {
+      /*place-self: center;*/
+      justify-self: end;
+      align-self: center;
+    }
+
+
+  </style>
+</head>
+
+<body>
+<!--<div class="form-area">-->
+  <form>
+    <h2>Edit your preferences</h2>
+    <div >
+      <ul class="input-area">
+        <li>
+          <label for="e-mail">Email:</label>
+          <input type="email" id="e-mail" name="e-mail">
+        </li>
+        <li>
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website">
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="tel" id="phone" name="phone">
+        </li>
+        <li>
+          <label for="food">Favorite food:</label>
+          <select name="food" id="food">
+            <option>Salad</option>
+            <option>Curry</option>
+            <option>Pizza</option>
+            <option>Fajitas</option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <button class="button-area">Update preferences</button>
+  </form>
+<!--</div>-->
+
+</body>
+
+</html>

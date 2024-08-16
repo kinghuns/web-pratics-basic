@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+      input[type="checkbox"] {
+        appearance: none;
+      }
+
+      input[type="checkbox"] {
+        position: relative;
+        width: 1em;
+        height: 1em;
+        border: 1px solid gray;
+        /* 调整文本基线上复选框的位置 */
+        vertical-align: -2px;
+        /* 在此设置，以便 Windows 的高对比度模式可以覆盖 */
+        color: green;
+      }
+
+      input[type="checkbox"]::before {
+        content: "✔";
+        position: absolute;
+        font-size: 1.2em;
+        right: -1px;
+        top: -0.3em;
+        visibility: hidden;
+      }
+
+      input[type="checkbox"]:checked::before {
+        /* 使用 `visibility` 而不是 `display`，以避免重新计算布局 */
+        visibility: visible;
+      }
+
+      input[type="checkbox"]:disabled {
+        border-color: black;
+        background: #ddd;
+        color: gray;
+      }
+
+
+    </style>
+</head>
+<body>
+<form>
+  <fieldset>
+    <legend>Fruit preferences</legend>
+
+    <p>
+      <label>
+        <input type="checkbox" name="fruit" value="cherry" />
+        I like cherry
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" name="fruit" value="banana" disabled />
+        I can't like banana
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" name="fruit" value="strawberry" />
+        I like strawberry
+      </label>
+    </p>
+  </fieldset>
+</form>
+
+</body>
+</html>
